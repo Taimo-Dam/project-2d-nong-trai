@@ -399,11 +399,14 @@ height = 14.0
 
 [node name="Player" type="CharacterBody2D" unique_id=576940314]
 script = ExtResource("1_puv7k")
+current_tools = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2075405472]
 sprite_frames = SubResource("SpriteFrames_jpyye")
-animation = &"chopping_front"
+animation = &"watering_front"
 autoplay = "idle_front"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=312644824]
 shape = SubResource("CapsuleShape2D_jpyye")
