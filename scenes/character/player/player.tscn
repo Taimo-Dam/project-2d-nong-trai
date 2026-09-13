@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dd5eaueih5xck" path="res://assets/Player/Basic Charakter Actions.png" id="1_tum32"]
 [ext_resource type="Texture2D" uid="uid://dkf485237rkk5" path="res://assets/Player/Basic Charakter Spritesheet.png" id="2_0vjlc"]
+[ext_resource type="Script" uid="uid://cyj22d04hu3l7" path="res://scripts/state_machine/node_state_machine.gd" id="3_bnvp8"]
+[ext_resource type="Script" uid="uid://b6ma5uboqerol" path="res://scenes/character/player/idle_state.gd" id="4_1y732"]
+[ext_resource type="Script" uid="uid://baumlswpy1hki" path="res://scenes/character/player/walk_state.gd" id="5_1y732"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bnvp8"]
 atlas = ExtResource("1_tum32")
@@ -98,6 +101,38 @@ region = Rect2(0, 144, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8sb7f"]
 atlas = ExtResource("2_0vjlc")
 region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in2if"]
+atlas = ExtResource("2_0vjlc")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5h5h"]
+atlas = ExtResource("2_0vjlc")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apd2u"]
+atlas = ExtResource("2_0vjlc")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puv7k"]
+atlas = ExtResource("2_0vjlc")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hixpj"]
+atlas = ExtResource("2_0vjlc")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v051h"]
+atlas = ExtResource("2_0vjlc")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0j1t"]
+atlas = ExtResource("2_0vjlc")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68dt2"]
+atlas = ExtResource("2_0vjlc")
+region = Rect2(144, 144, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8w16m"]
 atlas = ExtResource("1_tum32")
@@ -267,6 +302,50 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_in2if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5h5h")
+}],
+"loop": 1,
+"name": &"walk_back",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apd2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puv7k")
+}],
+"loop": 1,
+"name": &"walk_front",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hixpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v051h")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0j1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68dt2")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_8w16m")
 }, {
 "duration": 1.0,
@@ -318,9 +397,22 @@ height = 14.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2075405472]
 sprite_frames = SubResource("SpriteFrames_jpyye")
-animation = &"waterring_right"
+animation = &"walk_front"
 autoplay = "idle_front"
-frame_progress = 0.71984136
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=312644824]
 shape = SubResource("CapsuleShape2D_jpyye")
+
+[node name="StateMachine" type="Node2D" parent="." unique_id=1580814280 node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("3_bnvp8")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="StateMachine" unique_id=314437572 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("4_1y732")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Walk" type="Node2D" parent="StateMachine" unique_id=1717499446 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("5_1y732")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ca6yer5vaxkjg"]
 
 [ext_resource type="TileSet" uid="uid://c7e04tc3xqr30" path="res://Tilesets/test/tile_set.tres" id="1_mhild"]
-[ext_resource type="PackedScene" uid="uid://2y3a4j1avwui" path="res://scenes/character/player.tscn" id="2_q17pk"]
+[ext_resource type="PackedScene" uid="uid://2y3a4j1avwui" path="res://scenes/character/player/player.tscn" id="2_q17pk"]
 
 [node name="testmap" type="Node2D" unique_id=1706443401]
 
