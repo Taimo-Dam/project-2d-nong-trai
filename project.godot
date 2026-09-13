@@ -11,14 +11,19 @@ config_version=5
 [application]
 
 config/name="project2dNongTrai"
-run/main_scene="uid://c7n61sbwl1oep"
+run/main_scene="uid://j77wl7mtm0jf"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 
 [physics]
 
