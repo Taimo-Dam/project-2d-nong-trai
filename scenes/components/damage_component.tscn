@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://djj68o84vjx22"]
+
+[ext_resource type="Script" uid="uid://cqspgudvn8s4g" path="res://scenes/components/damage_component.gd" id="1_am71n"]
+
+[node name="DamageComponent" type="Node2D" unique_id=356530806]
+script = ExtResource("1_am71n")

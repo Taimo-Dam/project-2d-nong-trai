@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cjh0nkt4rvovw"]
+
+[ext_resource type="Texture2D" uid="uid://db6nkcv6p3x26" path="res://assets/Objects/Basic Grass Biom things 1.png" id="1_a8qts"]
+[ext_resource type="Shader" uid="uid://b57cs03mc4gqy" path="res://scenes/objects/trees/tree_shake.gdshader" id="1_w057i"]
+[ext_resource type="Script" uid="uid://b50oqblwre3dr" path="res://scenes/objects/trees/small_tree.gd" id="2_g5iuu"]
+[ext_resource type="PackedScene" uid="uid://i6dxnodm4d8h" path="res://scenes/components/hurt_component.tscn" id="2_xyb6m"]
+[ext_resource type="PackedScene" uid="uid://djj68o84vjx22" path="res://scenes/components/damage_component.tscn" id="4_w057i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7tvr"]
+shader = ExtResource("1_w057i")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0v5b"]
+atlas = ExtResource("1_a8qts")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpyye"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpyye"]
+size = Vector2(10, 18)
+
+[node name="SmallTree" type="Sprite2D" unique_id=1457058677]
+material = SubResource("ShaderMaterial_q7tvr")
+position = Vector2(0, -11)
+texture = SubResource("AtlasTexture_w0v5b")
+script = ExtResource("2_g5iuu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1356119266]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1311082931]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_jpyye")
+
+[node name="HurtComponent" parent="." unique_id=583516668 instance=ExtResource("2_xyb6m")]
+
+[node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=1070686865]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_jpyye")
+debug_color = Color(0.8693004, 0.00052366254, 0.85336417, 0.41960785)
+
+[node name="DamageComponent" parent="." unique_id=356530806 instance=ExtResource("4_w057i")]
+max_damage = 3

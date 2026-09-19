@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d1gpwaoowcrxm"]
+
+[ext_resource type="Shader" uid="uid://b57cs03mc4gqy" path="res://scenes/objects/trees/tree_shake.gdshader" id="1_3bljl"]
+[ext_resource type="Texture2D" uid="uid://db6nkcv6p3x26" path="res://assets/Objects/Basic Grass Biom things 1.png" id="1_q7tvr"]
+[ext_resource type="Script" uid="uid://dwwvue4acrp02" path="res://scenes/objects/trees/big_tree.gd" id="2_q7tvr"]
+[ext_resource type="PackedScene" uid="uid://i6dxnodm4d8h" path="res://scenes/components/hurt_component.tscn" id="3_34cw3"]
+[ext_resource type="PackedScene" uid="uid://djj68o84vjx22" path="res://scenes/components/damage_component.tscn" id="4_0us06"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7tvr"]
+shader = ExtResource("1_3bljl")
+shader_parameter/shake_intensity = 1.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0v5b"]
+atlas = ExtResource("1_q7tvr")
+region = Rect2(16, 0, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpyye"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpyye"]
+size = Vector2(10, 18)
+
+[node name="BigTree" type="Sprite2D" unique_id=1457058677]
+material = SubResource("ShaderMaterial_q7tvr")
+position = Vector2(0, -14)
+texture = SubResource("AtlasTexture_w0v5b")
+script = ExtResource("2_q7tvr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1356119266]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1311082931]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_jpyye")
+
+[node name="HurtComponent" parent="." unique_id=583516668 instance=ExtResource("3_34cw3")]
+
+[node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=1070686865]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_jpyye")
+debug_color = Color(0.8693004, 0.00052366254, 0.85336417, 0.41960785)
+
+[node name="DamageComponent" parent="." unique_id=356530806 instance=ExtResource("4_0us06")]
+max_damage = 5

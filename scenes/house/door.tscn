@@ -57,7 +57,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"close_door",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -65,7 +65,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -82,14 +82,14 @@ animations = [{
 }],
 "loop": 0,
 "name": &"open_door",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34wtv"]
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljh7b"]
-size = Vector2(12, 26)
+size = Vector2(12, 37)
 
 [node name="Door" type="StaticBody2D" unique_id=1550198625]
 script = ExtResource("1_lwpok")
@@ -98,6 +98,8 @@ script = ExtResource("1_lwpok")
 sprite_frames = SubResource("SpriteFrames_orua6")
 animation = &"close_door"
 autoplay = "default"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1821229049]
 shape = SubResource("RectangleShape2D_34wtv")
@@ -105,4 +107,5 @@ shape = SubResource("RectangleShape2D_34wtv")
 [node name="InteractableComponents" parent="." unique_id=121602637 instance=ExtResource("3_3bhf3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponents" unique_id=1649158581]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ljh7b")
