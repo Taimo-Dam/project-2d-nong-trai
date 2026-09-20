@@ -402,6 +402,7 @@ height = 6.0
 radius = 2.0
 
 [node name="Player" type="CharacterBody2D" unique_id=576940314]
+y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_puv7k")
 current_tools = 1

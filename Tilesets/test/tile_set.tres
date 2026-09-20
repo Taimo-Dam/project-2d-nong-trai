@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cjh0nkt4rvovw" path="res://scenes/objects/trees/small_tree.tscn" id="4_sglmt"]
 [ext_resource type="Texture2D" uid="uid://db6nkcv6p3x26" path="res://assets/Objects/Basic Grass Biom things 1.png" id="4_ucj0n"]
 [ext_resource type="PackedScene" uid="uid://d1gpwaoowcrxm" path="res://scenes/objects/trees/big_tree.tscn" id="5_stj1u"]
+[ext_resource type="PackedScene" uid="uid://cx7rcpume3kpb" path="res://scenes/objects/trees/apple_tree.tscn" id="6_k7p0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ssbst"]
 texture = ExtResource("1_22xo6")
@@ -236,6 +237,7 @@ texture = ExtResource("2_ucj0n")
 scenes/1/scene = ExtResource("3_w0v5b")
 scenes/2/scene = ExtResource("4_sglmt")
 scenes/3/scene = ExtResource("5_stj1u")
+scenes/5/scene = ExtResource("6_k7p0m")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lph6q"]
 texture = ExtResource("3_l6jk3")
@@ -455,11 +457,17 @@ texture = ExtResource("3_l6jk3")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6jk3"]
 texture = ExtResource("4_ucj0n")
 3:0/0 = 0
+3:0/0/y_sort_origin = 3
 4:1/0 = 0
+4:1/0/y_sort_origin = -2
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -0.5, -5, -0.5, -2.5, 5)
 4:2/0 = 0
 3:2/0 = 0
 3:1/0 = 0
+3:1/0/y_sort_origin = -2
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4, 5.5, 4.5, 0, 8, 0, 8, 7)
 4:0/0 = 0
+4:0/0/y_sort_origin = 3
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -482,6 +490,23 @@ texture = ExtResource("4_ucj0n")
 6:3/0 = 0
 0:3/0 = 0
 1:3/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
 
 [resource]
 resource_local_to_scene = true

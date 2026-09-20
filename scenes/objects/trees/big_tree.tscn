@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://i6dxnodm4d8h" path="res://scenes/components/hurt_component.tscn" id="3_34cw3"]
 [ext_resource type="PackedScene" uid="uid://djj68o84vjx22" path="res://scenes/components/damage_component.tscn" id="4_0us06"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7tvr"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34cw3"]
+resource_local_to_scene = true
 shader = ExtResource("1_3bljl")
-shader_parameter/shake_intensity = 1.0
+shader_parameter/shake_intensity = 0.0
 shader_parameter/shake_speed = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w0v5b"]
@@ -22,7 +23,7 @@ radius = 5.0
 size = Vector2(10, 18)
 
 [node name="BigTree" type="Sprite2D" unique_id=1457058677]
-material = SubResource("ShaderMaterial_q7tvr")
+material = SubResource("ShaderMaterial_34cw3")
 position = Vector2(0, -14)
 texture = SubResource("AtlasTexture_w0v5b")
 script = ExtResource("2_q7tvr")

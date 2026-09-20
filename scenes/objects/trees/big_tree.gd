@@ -6,7 +6,8 @@ extends Sprite2D
 var log_scene = preload("res://scenes/objects/trees/log.tscn")
  
 func _ready() -> void:
-	
+	var mat = material.duplicate()
+	material = mat
 	hurt_component.hurt.connect(on_hurt)
 	damage_component.max_damage_reached.connect(on_max_damage_reached)
 
