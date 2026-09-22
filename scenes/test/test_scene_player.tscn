@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://c7e04tc3xqr30" path="res://Tilesets/test/tile_set.tres" id="1_mhild"]
 [ext_resource type="PackedScene" uid="uid://2y3a4j1avwui" path="res://scenes/character/player/player.tscn" id="2_q17pk"]
+[ext_resource type="PackedScene" uid="uid://vv6belu5n021" path="res://scenes/ui/game_screen.tscn" id="3_vcgnq"]
 
 [node name="testmap" type="Node2D" unique_id=1706443401]
 
@@ -17,3 +18,5 @@ tile_set = ExtResource("1_mhild")
 
 [node name="Player" parent="." unique_id=576940314 instance=ExtResource("2_q17pk")]
 position = Vector2(40, 80)
+
+[node name="GameScreen" parent="." unique_id=1086409598 instance=ExtResource("3_vcgnq")]

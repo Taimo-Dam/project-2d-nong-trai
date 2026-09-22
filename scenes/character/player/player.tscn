@@ -405,7 +405,6 @@ radius = 2.0
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_puv7k")
-current_tools = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2075405472]
 sprite_frames = SubResource("SpriteFrames_jpyye")
