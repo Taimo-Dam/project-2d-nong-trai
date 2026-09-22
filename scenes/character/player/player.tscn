@@ -451,3 +451,5 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_jpyye")
 debug_color = Color(0.9154661, 8.5672735e-05, 0.714913, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1859001724]
