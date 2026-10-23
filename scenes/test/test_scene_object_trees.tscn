@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://c7e04tc3xqr30" path="res://Tilesets/test/tile_set.tres" id="1_cpn8j"]
 [ext_resource type="PackedScene" uid="uid://2y3a4j1avwui" path="res://scenes/character/player/player.tscn" id="2_x5hbo"]
 [ext_resource type="PackedScene" uid="uid://vv6belu5n021" path="res://scenes/ui/game_screen.tscn" id="3_6mhvp"]
+[ext_resource type="PackedScene" uid="uid://c870hcvf60sng" path="res://scenes/objects/egg.tscn" id="4_7b5dd"]
 
 [node name="testmap" type="Node2D" unique_id=1706443401]
 y_sort_enabled = true
@@ -35,3 +36,6 @@ tile_set = ExtResource("1_cpn8j")
 position = Vector2(52, 87)
 
 [node name="GameScreen" parent="Node2D" unique_id=1086409598 instance=ExtResource("3_6mhvp")]
+
+[node name="Egg" parent="Node2D" unique_id=1678115051 instance=ExtResource("4_7b5dd")]
+position = Vector2(71, 66)
