@@ -4,6 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://2y3a4j1avwui" path="res://scenes/character/player/player.tscn" id="2_x5hbo"]
 [ext_resource type="PackedScene" uid="uid://vv6belu5n021" path="res://scenes/ui/game_screen.tscn" id="3_6mhvp"]
 [ext_resource type="PackedScene" uid="uid://c870hcvf60sng" path="res://scenes/objects/egg.tscn" id="4_7b5dd"]
+[ext_resource type="PackedScene" uid="uid://c5vwag80ypish" path="res://scenes/objects/rocks/rock.tscn" id="5_rock"]
+[ext_resource type="Shader" uid="uid://b57cs03mc4gqy" path="res://scenes/objects/trees/tree_shake.gdshader" id="6_hxrmh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fhliw"]
+resource_local_to_scene = true
+shader = ExtResource("6_hxrmh")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [node name="testmap" type="Node2D" unique_id=1706443401]
 y_sort_enabled = true
@@ -39,3 +47,7 @@ position = Vector2(52, 87)
 
 [node name="Egg" parent="Node2D" unique_id=1678115051 instance=ExtResource("4_7b5dd")]
 position = Vector2(71, 66)
+
+[node name="Rock" parent="Node2D" unique_id=991156191 instance=ExtResource("5_rock")]
+material = SubResource("ShaderMaterial_fhliw")
+position = Vector2(112, 85)

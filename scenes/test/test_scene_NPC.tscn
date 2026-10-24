@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://c7e04tc3xqr30" path="res://Tilesets/test/tile_set.tres" id="1_pbksc"]
 [ext_resource type="PackedScene" uid="uid://2y3a4j1avwui" path="res://scenes/character/player/player.tscn" id="2_0jr7y"]
+[ext_resource type="PackedScene" path="res://scenes/character/chicken/chicken.tscn" id="3_chicken"]
 
 [node name="testmap" type="Node2D" unique_id=1706443401]
 y_sort_enabled = true
@@ -32,3 +33,9 @@ tile_set = ExtResource("1_pbksc")
 
 [node name="Player" parent="Node2D" unique_id=576940314 instance=ExtResource("2_0jr7y")]
 position = Vector2(52, 87)
+
+[node name="Chicken1" parent="Node2D" instance=ExtResource("3_chicken")]
+position = Vector2(80, 85)
+
+[node name="Chicken2" parent="Node2D" instance=ExtResource("3_chicken")]
+position = Vector2(110, 90)

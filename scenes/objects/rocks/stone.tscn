@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://cdsx58c6tuh0v" path="res://assets/Objects/Basic tools and meterials.png" id="1_toolmat"]
+[ext_resource type="PackedScene" uid="uid://veobdwvtyxbh" path="res://scenes/components/collectable_component.tscn" id="2_collcomp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stone"]
+atlas = ExtResource("1_toolmat")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_stone"]
+radius = 6.0
+
+[node name="Stone" type="Sprite2D"]
+texture = SubResource("AtlasTexture_stone")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_collcomp")]
+collectable_name = "stone"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_stone")
+debug_color = Color(0.2, 0.65, 0.2, 0.42)
