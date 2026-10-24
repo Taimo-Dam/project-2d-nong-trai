@@ -17,10 +17,10 @@ atlas = ExtResource("2_texture")
 region = Rect2(128.07747, 15.652878, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_body"]
-radius = 5.0
+radius = 6.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hurt"]
-size = Vector2(14, 12)
+size = Vector2(12, 9)
 
 [node name="Rock" type="Sprite2D" unique_id=2050752337]
 material = SubResource("ShaderMaterial_rock")
@@ -38,7 +38,7 @@ shape = SubResource("CircleShape2D_body")
 tool = 1
 
 [node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=1155583977]
-position = Vector2(0, 1)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_hurt")
 debug_color = Color(0.87, 0, 0.85, 0.42)
 
