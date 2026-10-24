@@ -35,8 +35,9 @@ func _on_enter() -> void:
 		hit_component_collision_shape.position = Vector2(10, 5)
 	else:
 		animated_sprite_2d.play("watering_front")
-		
-		hit_component_collision_shape.disabled = false
+		hit_component_collision_shape.position = Vector2(0, 5)
+
+	hit_component_collision_shape.disabled = false
 
 func _on_exit() -> void:
 	animated_sprite_2d.stop()
